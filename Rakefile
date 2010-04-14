@@ -8,5 +8,6 @@ Echoe.new('boxcar_api', '1.0.0') do |p|
   p.author         = "Jonathan George"
   p.email          = "help@boxcar.io"
   p.ignore_pattern = ["tmp/*", "script/*"]
-  p.development_dependencies = []
+  p.development_dependencies = ["httparty"]
+  p.runtime_dependencies = ["httparty"]
 end
