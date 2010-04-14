@@ -2,11 +2,11 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('boxcar', '1.0.0') do |p|
+Echoe.new('boxcar_api', '1.0.0') do |p|
   p.description    = "A simple way to send notifications to yourself, or your users through Boxcar."
-  p.url            = "http://github.com/boxcar/boxcar"
+  p.url            = "http://github.com/boxcar/boxcar_api"
   p.author         = "Jonathan George"
-  p.email          = "jonathan@jdg.net"
+  p.email          = "help@boxcar.io"
   p.ignore_pattern = ["tmp/*", "script/*"]
   p.development_dependencies = []
 end
