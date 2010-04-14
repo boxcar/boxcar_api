@@ -1,0 +1,16 @@
+= Boxcar API
+
+The Boxcar API gem allows Ruby developers to programmatically deliver notifications either to themselves, or as a provider.
+
+== Usage
+
+=== Requirements
+
+For more information and detailed documentation about the API visit:
+http://boxcar.io/help/api/providers
+http://boxcar.io/help/api/users
+
+
+== Copyright
+
+Copyright (c) 2010 Boxcar. MIT Licensed.
