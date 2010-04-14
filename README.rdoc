@@ -2,13 +2,9 @@
 
 The Boxcar API gem allows Ruby developers to programmatically deliver notifications either to themselves, or as a provider.
 
-== Usage
+To send yourself notifications, visit http://boxcar.io/help/api/users
 
-=== Requirements
-
-For more information and detailed documentation about the API visit:
-http://boxcar.io/help/api/providers
-http://boxcar.io/help/api/users
+To send other people notifications, visit http://boxcar.io/help/api/providers
 
 
 == Copyright
