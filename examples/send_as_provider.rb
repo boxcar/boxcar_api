@@ -25,7 +25,7 @@ else
 end
 
 #### Deliver a personalized notification to a subscriber by email.
-res = bp.broadcast("user@example.com", "This is an example message.", "from")
+res = bp.notify("user@example.com", "This is an example message.", "from")
 
 if res.code == 200
   puts "Success!  You sent a broadcast message to everyone using your service."
@@ -34,7 +34,7 @@ else
 end
 
 #### Deliver a personalized notification to a subscriber by their service token/secret.
-res = bp.broadcast(token, secret, "This is an example message.", "from")
+res = bp.notify_service(token, secret, "This is an example message.", "from")
 
 if res.code == 200
   puts "Success!  You sent a broadcast message to everyone using your service."
