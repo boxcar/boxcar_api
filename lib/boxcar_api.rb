@@ -21,40 +21,46 @@ module BoxcarAPI
       self.class.post("/subscribe", options)
     end
 
-    def broadcast(message, from_screen_name = nil, from_remote_service_id = nil, redirect_payload = nil)
+    def broadcast(message, from_screen_name = nil, from_remote_service_id = nil, redirect_payload = nil, source_url = nil, icon_url = nil)
       options = { :body => { :secret => provider_secret,
         :notification => {
           :message => message,
           :from_screen_name => from_screen_name,
           :from_remote_service_id => from_remote_service_id,
-          :redirect_payload => redirect_payload
+          :redirect_payload => redirect_payload,
+          :source_url => source_url,
+          :icon_url => icon_url
         } 
       }}
 
       self.class.post("/broadcast", options)
     end
 
-    def notify(email, message, from_screen_name = nil, from_remote_service_id = nil, redirect_payload = nil)
+    def notify(email, message, from_screen_name = nil, from_remote_service_id = nil, redirect_payload = nil, source_url = nil, icon_url = nil)
       options = { :body => { :email => hashed_email(email),
         :notification => {
           :message => message,
           :from_screen_name => from_screen_name,
           :from_remote_service_id => from_remote_service_id,
           :redirect_payload => redirect_payload
+          :source_url => source_url,
+          :icon_url => icon_url
         } 
       }}
 
       self.class.post("/", options)
     end
 
-    def notify_service(token, secret, message, from_screen_name = nil, from_remote_service_id = nil, redirect_payload = nil)
+    def notify_service(token, secret, message, from_screen_name = nil, from_remote_service_id = nil, redirect_payload = nil, source_url = nil, icon_url = nil)
       options = { :body => { :token => token, :secret => secret,
         :notification => {
           :message => message,
           :from_screen_name => from_screen_name,
           :from_remote_service_id => from_remote_service_id,
           :redirect_payload => redirect_payload
-        } 
+          :source_url => source_url,
+          :icon_url => icon_url
+        }
       }}
 
       self.class.post("/", options)
@@ -76,13 +82,15 @@ module BoxcarAPI
       @auth = { :username => email, :password => password }
     end
 
-    def notify(message, from_screen_name = nil, from_remote_service_id = nil)
+    def notify(message, from_screen_name = nil, from_remote_service_id = nil, source_url = nil, icon_url = nil)
       options = { :basic_auth => @auth, :body => { 
         :notification => {
           :message => message,
           :from_screen_name => from_screen_name,
-          :from_remote_service_id => from_remote_service_id
-        } 
+          :from_remote_service_id => from_remote_service_id,
+          :icon_url => icon_url,
+          :source_url => source_url
+        }
       }}
 
       self.class.post("/", options)

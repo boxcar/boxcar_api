@@ -16,6 +16,10 @@ end
 # This time include a 'from screen name' - e.g., an application name, or a person.
 res = bu.notify("message", "from")
 
+# This time include an 'icon url' - a link to an icon hosted online.
+# Also include a 'source url', a link that we'll take you to when you chose to View Original for the notification.
+res = bu.notify("message", "from", nil, "http://facebook.com", "http://graph.facebook.com/jonathan.george/picture")
+
 # This time include a unique identifier, and if you send it more than once
 # additional notifications will be dropped as duplicates.
 res = bu.notify("message", "from", "unique")

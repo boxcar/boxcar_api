@@ -56,6 +56,19 @@ else
   puts "Problem!  HTTP status code: #{res.code}.  Check the API docs!"
 end
 
+#### Deliver a personalized notification to a subscriber by email, including a redirect payload
+# Redirect payloads are what replaces "::user::" in your Boxcar redirect URL.
+# Also include a source_url and an icon_url
+
+res = bp.notify(SETTINGS[:email], "This is an example message.", "from", nil, "jdg", "http://google.com", 
+                "http://graph.facebook.com/jonathan.george/picture")
+if res.code == 200
+  puts "Success!  You sent a personalized message with a redirect payload, source_url and icon_url to #{SETTINGS[:email]}."
+else
+  puts "Problem!  HTTP status code: #{res.code}.  Check the API docs!"
+end
+
+
 #### Deliver a personalized notification to a subscriber by their service token/secret.
 #### This works, just commented out because it's much easier to use e-mail addresses.
 #
