@@ -1,0 +1,6 @@
+# Create a new provider for real testing
+# http://boxcar.io/site/providers
+#
+provider_key: "xyz"
+provider_secret: "xyz"
+email: "user@example.com"
