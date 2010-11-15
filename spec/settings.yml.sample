@@ -4,3 +4,4 @@
 provider_key: "xyz"
 provider_secret: "xyz"
 email: "user@example.com"
+password: "myboxpassword"
