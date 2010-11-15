@@ -42,7 +42,7 @@ module BoxcarAPI
           :message => message,
           :from_screen_name => from_screen_name,
           :from_remote_service_id => from_remote_service_id,
-          :redirect_payload => redirect_payload
+          :redirect_payload => redirect_payload,
           :source_url => source_url,
           :icon_url => icon_url
         } 
@@ -57,7 +57,7 @@ module BoxcarAPI
           :message => message,
           :from_screen_name => from_screen_name,
           :from_remote_service_id => from_remote_service_id,
-          :redirect_payload => redirect_payload
+          :redirect_payload => redirect_payload,
           :source_url => source_url,
           :icon_url => icon_url
         }
