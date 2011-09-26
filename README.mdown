@@ -36,7 +36,7 @@ Or reach all of your subscribers with a broadcast:
 
     provider.broadcast "Maintenance has begun. We expect to be back up 15 minutes."
     
-Want to know more? Check out our [API docs](http://boxcar.io/help/api/providers) and the [wiki](https://github.com/boxcar/boxcar_api/wiki) for all the details.
+Want to know more? Check out our [API docs](http://boxcar.io/help/api/providers) and the [examples](https://github.com/boxcar/boxcar_api/blob/master/examples/send_as_provider.rb) for all the details.
 
 
 Copyright
