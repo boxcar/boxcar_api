@@ -1,0 +1,46 @@
+boxcar_api
+=================
+
+
+Release Notes
+----------
+**Version 1.2**
+
+Updated to support new API features.
+
+
+The Boxcar API Gem
+-----------------
+boxcar_api is an easy way to add Boxcar notifications to your application.
+
+Getting Started
+-----------------
+First, you'll need to create a provider [here](http://boxcar.io/site/providers). We'll give you a provider key and a provider secret. Once you have those, you can get started:
+
+    provider = BoxcarAPI::Provider.new('your_key', 'your_secret')
+    
+Subscribe a Boxcar user to your service:
+    
+    provider.subscribe "user@example.com"
+
+Then send that user a notification:
+
+    provider.notify("user@example.com", "Your product has shipped!")
+    
+You can also send a group of users a notification:
+
+    users = ["user1@example.com", "user2@example.com"]
+    provider.batch_notify(users, "Your account has been upgraded.")
+    
+Or reach all of your subscribers with a broadcast:
+
+    provider.broadcast "Maintenance has begun. We expect to be back up 15 minutes."
+    
+Want to know more? Check out our [API docs](http://boxcar.io/help/api/providers) and the [wiki](https://github.com/boxcar/boxcar_api/wiki) for all the details.
+
+
+Copyright
+-----
+
+Copyright (c) 2010 Boxcar. MIT Licensed.
+
