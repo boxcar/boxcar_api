@@ -1,8 +1,7 @@
 LICENSE
 Manifest
-README.rdoc
+README.mdown
 Rakefile
 examples/send_as_provider.rb
-examples/send_to_yourself.rb
 init.rb
 lib/boxcar_api.rb
