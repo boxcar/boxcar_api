@@ -34,7 +34,7 @@ describe BoxcarAPI::Provider do
     it "should accept source_url" do
       @box.broadcast("message with url", "jtadeulopes", nil, "jdg", "http://google.com").code.should == 200
     end
-    it "shuold accept icon_url" do
+    it "should accept icon_url" do
       @box.broadcast("message with icon", "jtadeulopes", nil, "jdg", "http://google.com", "http://graph.facebook.com/jtadeulopes/picture").code.should == 200
     end
   end
@@ -55,7 +55,7 @@ describe BoxcarAPI::Provider do
     it "should accept source_url" do
       @box.notify(@config['email'], "message with url", "jtadeulopes", nil, "jdg", "http://google.com").code.should == 200
     end
-    it "shuold accept icon_url" do
+    it "should accept icon_url" do
       @box.notify(@config['email'], "message with icon", "jtadeulopes", nil, "jdg", "http://google.com", "http://graph.facebook.com/jtadeulopes/picture").code.should == 200
     end
   end
