@@ -30,6 +30,12 @@ another_provider = BoxcarAPI::Provider.new(provider_key, provider_secret, "Exmpl
 res = another_provider.notify(email, "This is an example message from Exmplr")
 puts res.code
 
+#### If you received a URL instead of a key and a secret, you can also create a provider from that:
+url_provider = BoxcarAPI::Provider.new(:url => "http://boxcar.io/devices/providers/secretkey")
+puts url_provider.provider_key
+res = another_provider.notify(email, "This is an example message from a URL provider")
+puts res.code
+
 #### Deliver a notification with a source URL. 
 # This is the URL the user will be taken to when they open your message.
 res = provider.notify(email, "You have an update.", :source_url => "http://example.com/status/1312430")
