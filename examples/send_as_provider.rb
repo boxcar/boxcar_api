@@ -32,7 +32,6 @@ puts res.code
 
 #### If you received a URL instead of a key and a secret, you can also create a provider from that:
 url_provider = BoxcarAPI::Provider.new(:url => "http://boxcar.io/devices/providers/secretkey")
-puts url_provider.provider_key
 res = another_provider.notify(email, "This is an example message from a URL provider")
 puts res.code
 
