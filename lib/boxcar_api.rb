@@ -8,11 +8,19 @@ module BoxcarAPI
     include HTTParty
     attr_accessor :provider_key, :provider_secret, :screen_name
 
-    def initialize(provider_key, provider_secret, screen_name = nil)
-      @provider_key    = provider_key
-      @provider_secret = provider_secret
-      @screen_name     = screen_name
-      self.class.base_uri "https://boxcar.io/devices/providers/#{@provider_key}/notifications"
+    def initialize(provider_key ={}, provider_secret = nil, screen_name = nil)
+      if provider_key.kind_of? Hash
+        url = provider_key[:url]
+        url.chop! if url.end_with? '/'
+
+        @provider_key    =  url.match(/https?:\/\/\S+\/(.*)$/)[1]
+        self.class.base_uri(url + "/notifications")
+      else
+        @provider_key    = provider_key
+        @provider_secret = provider_secret
+        @screen_name     = screen_name
+        self.class.base_uri "https://boxcar.io/devices/providers/#{@provider_key}/notifications"
+      end
     end
 
     def subscribe(email)
